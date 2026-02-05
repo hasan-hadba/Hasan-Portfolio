@@ -1,0 +1,350 @@
+/* --- إعدادات الألوان (Dark/Light Mode) --- */
+:root {
+    --bg-color: #0f172a;       /* لون الخلفية الداكن */
+    --text-color: #f8fafc;     /* لون النص الداكن */
+    --navbar-bg: rgba(15, 23, 42, 0.8);
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* عندما يتم إضافة كلاس light-mode بواسطة JavaScript */
+body.light-mode {
+    --bg-color: #f1f5f9;      
+    --text-color: #0f172a;     
+    --navbar-bg: rgba(241, 245, 249, 0.8);
+    --card-bg: #ffffff;
+}
+
+/* ربط المتغيرات بالكود الخاص بي */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background: var(--navbar-bg) !important;
+}
+
+.skill-card, .project-box {
+    background: var(--card-bg) !important;
+}
+/* --- نهاية إعدادات الوضع --- */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a; 
+    color: #f8fafc;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Navbar Style */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #38bdf8; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a {
+    color: var(--text-color); 
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-content h3 {
+    color: #38bdf8;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p span {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.hero-img img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic shape */
+    border: 5px solid #38bdf8;
+    animation: morphing 8s infinite alternate ease-in-out;
+}
+
+@keyframes morphing {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: 0.4s ease;
+    margin-right: 1rem;
+}
+
+.primary-btn {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.primary-btn:hover {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+}
+
+/* Projects Grid */
+.projects { padding: 5rem 0; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #38bdf8;
+    margin: 10px auto;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-box {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 250px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.project-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(transparent, #38bdf8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.project-box:hover .project-layer {
+    height: 100%;
+    opacity: 1;
+}
+
+.project-box:hover img {
+    transform: scale(1.1);
+}
+
+.project-links a {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin: 10px;
+    background: white;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: #38bdf8;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skill-card:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+/* --- قسم التواصل الثابت (لا يتأثر بالوضع الفاتح) --- */
+.contact {
+    padding: 4rem 0;
+    text-align: center;
+    background: #0b1120 !important; 
+    color: #f8fafc !important;     
+}
+
+/* لضمان أن العنوان يبقى فاتحاً */
+.contact .section-title {
+    color: #f8fafc !important;
+}
+
+.contact .section-title::after {
+    background: #38bdf8 !important;
+}
+
+.contact p {
+    color: #94a3b8 !important;
+}
+
+.social-icons {
+    margin: 2rem 0;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: #f8fafc !important; /* الأيقونات بيضاء دائماً */
+    margin: 0 1.2rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #38bdf8 !important; 
+    transform: translateY(-5px);
+}
+
+.copyright {
+    color: #64748b !important;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    .hero-img {
+        order: -1;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-img img { width: 250px; height: 250px; }
+    
+    .nav-links { display: none; } 
+}
