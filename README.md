@@ -4,7 +4,7 @@
 This is a professional personal portfolio developed to showcase web development projects and technical skills. The project focuses on clean code structure, user experience, and modern front-end techniques.
 
 ## Live Demo
-The project is hosted and can be viewed at: [Insert Your GitHub Pages Link Here]
+The project is hosted and can be viewed at: [https://hasan-hadba.github.io/Hasan-Portfolio/]
 
 ## Key Technical Features
 - Dark and Light Mode: A toggle system that saves user preference using LocalStorage.
@@ -20,7 +20,6 @@ The project is hosted and can be viewed at: [Insert Your GitHub Pages Link Here]
 ## Project Showcase
 - Adidas Landing Page: High-fidelity UI focused on product presentation.
 - Image Editor: A web-based tool for basic image processing.
-- Product Management System: Implementing CRUD operations for data management.
 
 ## Contact Information
 - Name: Hasan Hadba
